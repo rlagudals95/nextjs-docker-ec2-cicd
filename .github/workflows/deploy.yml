@@ -48,7 +48,7 @@ jobs:
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            docker pull ${{ steps.login-ecr.outputs.registry }}/your-repository-name:${{ github.sha }}
+            docker pull ${{ steps.login-ecr.outputs.registry }}/hmk/next:${{ github.sha }}
             docker stop $(docker ps -a -q) || true
             docker rm $(docker ps -a -q) || true
-            docker run -d -p 80:80 ${{ steps.login-ecr.outputs.registry }}/your-repository-name:${{ github.sha }}
+            docker run -d -p 80:80 ${{ steps.login-ecr.outputs.registry }}/hmk/next:${{ github.sha }}
