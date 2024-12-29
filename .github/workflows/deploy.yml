@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Check Secrets
         run: |
-          echo "Checking if secrets exist..."
+          echo "Checking if secrets exist.."
           [ -n "${{ secrets.AWS_ACCESS_KEY_ID }}" ] && echo "✅ AWS_ACCESS_KEY_ID exists" || echo "❌ AWS_ACCESS_KEY_ID is missing"
           [ -n "${{ secrets.AWS_SECRET_ACCESS_KEY }}" ] && echo "✅ AWS_SECRET_ACCESS_KEY exists" || echo "❌ AWS_SECRET_ACCESS_KEY is missing"
           [ -n "${{ secrets.EC2_HOST }}" ] && echo "✅ EC2_HOST exists" || echo "❌ EC2_HOST is missing"
